@@ -60,9 +60,9 @@ function getEvent(i) {
                             <div class="event-container__icon">${iconsArray[data.value[i].ikona]}</div> 
                           </div>
                           <div class=event-container__row-two>
-                            <div class="event-container__location"><img src="images/pin.svg" alt="" /> <a href="https://maps.google.com/?q=${data.value[i].wgsLat},${data.value[i].wgsLon}">${
-        data.value[i].obcinaNaziv
-      }</a></div>
+                            <div class="event-container__location"><img src="images/pin.svg" alt="map pin icon" /> <a href="https://maps.google.com/?q=${data.value[i].wgsLat},${
+        data.value[i].wgsLon
+      }">${data.value[i].obcinaNaziv}</a></div>
                             <div class="event-container__date">${eventDateDay}.${eventDateMonth}.${eventDateYear}, ${eventTime}</div>
                           </div>                          
                           <div class="event-container__description">${description}</div>
