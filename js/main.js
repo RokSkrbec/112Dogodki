@@ -69,7 +69,6 @@ function getEvent(i) {
                          </div>`
       const eventContainer = document.querySelectorAll('.event-container')
       eventContainer[i].classList.add('event-container--box-shadow-' + data.value[i].ikona)
-      console.log(i)
     })
     .catch(err => {
       console.log(err)
@@ -80,21 +79,18 @@ function getEvent(i) {
 //------------------------------ start light/dark mode switch ------------------------------------------
 
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]')
-const logo = document.getElementById('logo').src
-const favicon = document.getElementById('favicon').href
-console.log(favicon)
 
 // function that changes data-theme attribute, logo and sets localstorage variable
 function switchTheme(e) {
   if (e.target.checked) {
     document.documentElement.setAttribute('data-theme', 'dark')
     document.getElementById('logo').src = 'images/logo-dark.svg'
-    document.getElementById('favicon').href = 'images/favicon-dark.png'
+    document.getElementById('favicon').href = '/favicon-dark.png'
     localStorage.setItem('theme', 'dark')
   } else {
     document.documentElement.setAttribute('data-theme', 'light')
     document.getElementById('logo').src = 'images/logo-light.svg'
-    document.getElementById('favicon').href = 'images/favicon-light.png'
+    document.getElementById('favicon').href = '/favicon-light.png'
     localStorage.setItem('theme', 'light')
   }
 }
@@ -109,7 +105,7 @@ if (currentTheme) {
   if (currentTheme === 'dark') {
     toggleSwitch.checked = true
     document.getElementById('logo').src = 'images/logo-dark.svg'
-    document.getElementById('favicon').href = 'images/favicon-dark.png'
+    document.getElementById('favicon').href = '/favicon-dark.png'
   }
 }
 
