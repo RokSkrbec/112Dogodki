@@ -81,16 +81,20 @@ function getEvent(i) {
 
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]')
 const logo = document.getElementById('logo').src
+const favicon = document.getElementById('favicon').href
+console.log(favicon)
 
 // function that changes data-theme attribute, logo and sets localstorage variable
 function switchTheme(e) {
   if (e.target.checked) {
     document.documentElement.setAttribute('data-theme', 'dark')
     document.getElementById('logo').src = 'images/logo-dark.svg'
+    document.getElementById('favicon').href = 'images/favicon-dark.png'
     localStorage.setItem('theme', 'dark')
   } else {
     document.documentElement.setAttribute('data-theme', 'light')
     document.getElementById('logo').src = 'images/logo-light.svg'
+    document.getElementById('favicon').href = 'images/favicon-light.png'
     localStorage.setItem('theme', 'light')
   }
 }
@@ -105,6 +109,7 @@ if (currentTheme) {
   if (currentTheme === 'dark') {
     toggleSwitch.checked = true
     document.getElementById('logo').src = 'images/logo-dark.svg'
+    document.getElementById('favicon').href = 'images/favicon-dark.png'
   }
 }
 
